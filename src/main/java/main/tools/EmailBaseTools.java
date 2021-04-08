@@ -2,16 +2,13 @@ package main.tools;
 
 import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
 @Component
 public class EmailBaseTools {
 
     public Map<String, HashSet<String>> getStructuredUsersEmailMap(Map<String, String> usersEmailMap)   {
-        Map<String, HashSet<String>> resultMap = new TreeMap<>();
+        Map<String, HashSet<String>> resultMap = new HashMap<>();
         for(String email : usersEmailMap.keySet())    {
             String user = usersEmailMap.get(email);
             if (resultMap.containsKey(user))    {
